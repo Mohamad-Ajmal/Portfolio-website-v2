@@ -1,0 +1,9 @@
+.git*
+.vscode/
+local.settings.json
+.env
+.env.*
+node_modules/
+src/
+tsconfig.json
+README.md
