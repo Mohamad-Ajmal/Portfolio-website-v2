@@ -194,7 +194,7 @@ export const serviceCards: Service[] = [
           "Easy content management",
         ],
         image: {
-          src: `/images/services/business-websites.webp?v=${LOGO_VERSION}`,
+          src: "/images/services/business-websites.webp",
           alt: "Business website project preview",
         },
       },
@@ -211,7 +211,7 @@ export const serviceCards: Service[] = [
           "Analytics and conversion tracking",
         ],
         image: {
-          src: `/images/services/landing-pages.webp?v=${LOGO_VERSION}`,
+          src: "/images/services/landing-pages.webp",
           alt: "Landing page project preview",
         },
       },
@@ -228,12 +228,13 @@ export const serviceCards: Service[] = [
           "Performance improvements",
         ],
         image: {
-          src: `/images/services/website-redesign.webp?v=${LOGO_VERSION}`,
+          src: "/images/services/website-redesign.webp",
           alt: "Website redesign project preview",
         },
       },
     ],
   },
+
   {
     id: "mobile-app-development",
     title: "Mobile App Development",
@@ -254,7 +255,7 @@ export const serviceCards: Service[] = [
           "Testing across screen sizes and devices",
         ],
         image: {
-          src: `/images/services/mobile-app.webp?v=${LOGO_VERSION}`,
+          src: "/images/services/mobile-app.webp",
           alt: "Branded mobile app displayed on iPhone and Android",
         },
       },
@@ -271,7 +272,7 @@ export const serviceCards: Service[] = [
           "Links that open the relevant app screen",
         ],
         image: {
-          src: `/images/services/push-notifications.webp?v=${LOGO_VERSION}`,
+          src: "/images/services/push-notifications.webp",
           alt: "Mobile app notifications and message preferences",
         },
       },
@@ -288,7 +289,7 @@ export const serviceCards: Service[] = [
           "Clear loading, empty, and error states",
         ],
         image: {
-          src: `/images/services/custom-app-screens.webp?v=${LOGO_VERSION}`,
+          src: "/images/services/custom-app-screens.webp",
           alt: "Custom mobile app screens and dashboard",
         },
       },
@@ -305,12 +306,13 @@ export const serviceCards: Service[] = [
           "Version updates and release management",
         ],
         image: {
-          src: `/images/services/app-store-submission.webp?v=${LOGO_VERSION}`,
+          src: "/images/services/app-store-submission.webp",
           alt: "Mobile app store listing and release preview",
         },
       },
     ],
   },
+
   {
     id: "ai-automation",
     title: "AI & Automation",
@@ -331,7 +333,7 @@ export const serviceCards: Service[] = [
           "Error tracking and workflow monitoring",
         ],
         image: {
-          src: `/images/services/automation-workflow.webp?v=${LOGO_VERSION}`,
+          src: "/images/services/automation-workflow.webp",
           alt: "Business automation workflow preview",
         },
       },
@@ -348,7 +350,7 @@ export const serviceCards: Service[] = [
           "Testing and ongoing improvements",
         ],
         image: {
-          src: `/images/services/ai-assistant.webp?v=${LOGO_VERSION}`,
+          src: "/images/services/ai-assistant.webp",
           alt: "AI assistant interface preview",
         },
       },
@@ -365,12 +367,13 @@ export const serviceCards: Service[] = [
           "Logging and failure notifications",
         ],
         image: {
-          src: `/images/services/integrations.webp?v=${LOGO_VERSION}`,
+          src: "/images/services/integrations.webp",
           alt: "Connected business tools preview",
         },
       },
     ],
   },
+
   {
     id: "custom-management-systems",
     title: "Custom Management Systems",
@@ -391,7 +394,7 @@ export const serviceCards: Service[] = [
           "Tools designed for your team",
         ],
         image: {
-          src: `/images/services/management-portal.webp?v=${LOGO_VERSION}`,
+          src: "/images/services/management-portal.webp",
           alt: "Custom management portal preview",
         },
       },
@@ -408,12 +411,13 @@ export const serviceCards: Service[] = [
           "Role-based access to information",
         ],
         image: {
-          src: `/images/services/dashboard.webp?v=${LOGO_VERSION}`,
+          src: "/images/services/dashboard.webp",
           alt: "Management dashboard and reports preview",
         },
       },
     ],
   },
+
   {
     id: "hosting-maintenance",
     title: "Hosting & Maintenance",
@@ -434,7 +438,7 @@ export const serviceCards: Service[] = [
           "Backup configuration",
         ],
         image: {
-          src: `/images/services/hosting.webp?v=${LOGO_VERSION}`,
+          src: "/images/services/hosting.webp",
           alt: "Website hosting management preview",
         },
       },
@@ -451,7 +455,7 @@ export const serviceCards: Service[] = [
           "Troubleshooting and technical support",
         ],
         image: {
-          src: `/images/services/maintenance.webp?v=${LOGO_VERSION}`,
+          src: "/images/services/maintenance.webp",
           alt: "Website maintenance overview",
         },
       },
