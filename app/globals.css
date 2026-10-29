@@ -1,26 +1,284 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Your two main brand colors */
+  --color-brand-light: #ff4c00;
+  --color-brand-dark: #d93500;
+  --color-brand-hover: #843313;
+
+  /* Backgrounds */
+  --color-page: #fffcfa;
+  --color-section: #fff4ee;
+  --color-card: #ffffff;
+  --color-card-hover: #fff8f4;
+  --color-highlight: #ffe8db;
+
+  /* Text */
+  --color-heading: #ff4c00;
+  --color-title: #2b211d;
+  --color-body: #403630;
+  --color-muted: #6d5c53;
+  --color-placeholder: #806c61;
+
+  /* Text selection */
+  --color-selection: #ffd5c2;
+
+  /* Shadows */
+  --shadow-card: 0 8px 28px #ab42190d;
+  --shadow-card-hover: 0 16px 40px #ab42191a;
 }
 
+/* Light mode and reusable gradients */
+:root {
+  color-scheme: light;
+
+  --gradient-hero: linear-gradient(
+    135deg,
+    #fffcfa 0%,
+    #fff4ee 60%,
+    #ffe8db 100%
+  );
+
+  --gradient-brand: linear-gradient(
+    135deg,
+    #ff4c00 0%,
+    #ab4219 100%
+  );
+
+  --gradient-card: linear-gradient(
+    145deg,
+    #ffffff 0%,
+    #fff4ee 100%
+  );
+
+  --gradient-button: linear-gradient(
+    135deg,
+    #ab4219 0%,
+    #843313 100%
+  );
+
+  --gradient-glow: radial-gradient(
+    circle,
+    #ff4c001f 0%,
+    #ff4c0000 70%
+  );
+}
+
+@layer base {
+  body {
+    margin: 0;
+    background-color: var(--color-page);
+    color: var(--color-body);
+  }
+
+  ::selection {
+    background-color: var(--color-selection);
+    color: var(--color-title);
+  }
+}
+
+/* Reusable gradient utilities */
+@utility bg-hero-gradient {
+  background-image: var(--gradient-hero);
+}
+
+@utility bg-brand-gradient {
+  background-image: var(--gradient-brand);
+}
+
+@utility bg-card-gradient {
+  background-image: var(--gradient-card);
+}
+
+@utility bg-button-gradient {
+  background-image: var(--gradient-button);
+}
+
+@utility bg-orange-glow {
+  background-image: var(--gradient-glow);
+}
+
+/* Connect the existing Geist font to Tailwind's font utilities. */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    font-family: var(--font-geist-sans), Arial, sans-serif;
+  }
+
+  /* Leave space above sections for the sticky header. */
+  section[id],
+  main[id] {
+    scroll-margin-top: 6.5rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Shared animation for logo sliders */
+@theme {
+  --animate-logo-scroll: logo-scroll 36s linear infinite;
+  --animate-float-soft: float-soft 4s ease-in-out infinite;
+
+  @keyframes logo-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes float-soft {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-9px);
+    }
+  }
+}
+
+@property --service-border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.service-card-border {
+  background: conic-gradient(
+    from var(--service-border-angle),
+    var(--service-border-soft) 0%,
+    var(--service-border-soft) 55%,
+    var(--service-border-accent) 75%,
+    var(--service-border-soft) 100%
+  );
+
+  animation: service-border-rotate 8s linear infinite;
+}
+
+.service-border-blue {
+  --service-border-soft: #dce5f4;
+  --service-border-accent: #4775c9;
+}
+
+.service-border-purple {
+  --service-border-soft: #eeddf2;
+  --service-border-accent: #a650b1;
+}
+
+.service-border-orange {
+  --service-border-soft: #f1cbb8;
+  --service-border-accent: #ff4c00;
+}
+
+.service-border-peach {
+  --service-border-soft: #f7ddd0;
+  --service-border-accent: #ff4c00;
+}
+
+.service-border-rose {
+  --service-border-soft: #f7dce2;
+  --service-border-accent: #cf526d;
+}
+
+@keyframes service-border-rotate {
+  to {
+    --service-border-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card-border {
+    animation: none;
+  }
+}
+
+/* Reusable tools slider animation */
+.tools-marquee-track {
+  animation: tools-marquee 42s linear infinite;
+}
+
+.tools-marquee-reverse {
+  animation-direction: reverse;
+}
+
+.tools-slider:hover .tools-marquee-track,
+.tools-slider:focus-within .tools-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes tools-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tools-marquee-track {
+    animation: none;
+    transform: none;
+  }
+}
+
+.cta-gradient {
+  animation: cta-gradient-shift 14s ease-in-out infinite;
+}
+
+.cta-orbit {
+  animation: cta-orbit-turn 35s linear infinite;
+}
+
+.cta-float {
+  animation: cta-float-drift 10s ease-in-out infinite;
+}
+
+@keyframes cta-gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes cta-orbit-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cta-float-drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(18px, -20px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-gradient,
+  .cta-orbit,
+  .cta-float {
+    animation: none;
+  }
 }
