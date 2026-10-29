@@ -8,9 +8,9 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "Ajmal Ibrahimkhail | Portfolio",
+  title: "Ajmal Ibrahimkhail | Website and Mobile App Developer, AI & Automation Specialist in Kabul, Afghanistan",
   description:
-    "Explore Ajmal Ibrahimkhail's portfolio, projects, services, and experience.",
+    "Explore Ajmal Ibrahimkhail’s portfolio of websites, mobile apps, and AI automation. Discover custom development services designed to help your business grow.",
 };
 
 export default function RootLayout({
