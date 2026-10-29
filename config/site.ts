@@ -194,7 +194,7 @@ export const serviceCards: Service[] = [
           "Easy content management",
         ],
         image: {
-          src: `/images/services/Business-websites.webp?v=${LOGO_VERSION}`,
+          src: `/images/services/business-websites.webp?v=${LOGO_VERSION}`,
           alt: "Business website project preview",
         },
       },
@@ -211,7 +211,7 @@ export const serviceCards: Service[] = [
           "Analytics and conversion tracking",
         ],
         image: {
-          src: `/images/services/Landing-Pages.webp?v=${LOGO_VERSION}`,
+          src: `/images/services/landing-pages.webp?v=${LOGO_VERSION}`,
           alt: "Landing page project preview",
         },
       },
@@ -228,7 +228,7 @@ export const serviceCards: Service[] = [
           "Performance improvements",
         ],
         image: {
-          src: `/images/services/Website-Redesign.webp?v=${LOGO_VERSION}`,
+          src: `/images/services/website-redesign.webp?v=${LOGO_VERSION}`,
           alt: "Website redesign project preview",
         },
       },
